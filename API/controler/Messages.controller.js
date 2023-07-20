@@ -14,10 +14,11 @@ const AddMessage = (req, res) => {
 
 const getAllMesages = async (req, res) => {
     try {
-    const allUsers = await AddMessage.find();
-  } catch (error) {
-    console.log("get all mesages error: ", e);
-  }
+        const allMessages = await messagesModel.find()
+        res.status(200).json(allMessages)
+    } catch (error) {
+        console.log("get all mesages error: ", e);
+    }
 }
 
 module.exports = {
